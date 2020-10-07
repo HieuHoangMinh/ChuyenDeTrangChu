@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ChuyenDe4"
+    }
+  },
+  "defaultProject": "ChuyenDe4",
+  "cli": {
+    "analytics": "27ff6ae7-08ed-4b68-a79f-48bd818beb26"
+  }
 }
