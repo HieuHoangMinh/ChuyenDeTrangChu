@@ -8,11 +8,12 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SanphamComponent } from './sanpham/sanpham.component';
-import { Err404Component } from './err404/err404.component';
+
 import { LoginComponent } from './login/login.component';
 import { ThuonghieuComponent } from './thuonghieu/thuonghieu.component';
 import { TrangComponent } from './trang/trang.component';
 import { LienhechungtoiComponent } from './lienhechungtoi/lienhechungtoi.component';
+import { Err404Component } from './err404/err404.component';
 
 
 @NgModule({
@@ -22,11 +23,12 @@ import { LienhechungtoiComponent } from './lienhechungtoi/lienhechungtoi.compone
     FooterComponent,
     HomeComponent,
     SanphamComponent,
-    Err404Component,
+
     LoginComponent,
     ThuonghieuComponent,
     TrangComponent,
     LienhechungtoiComponent,
+    Err404Component,
 
 
   ],

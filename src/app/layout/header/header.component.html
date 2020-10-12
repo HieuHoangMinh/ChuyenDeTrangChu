@@ -294,15 +294,7 @@
                                       <li class="mega_items"><a routerLink="sanpham/danhsach">Đồ Câu Cá<i class="fa fa-angle-down"></i></a>
                                           <div class="mega_menu">
                                               <ul class="mega_menu_inner">
-                                                  <li><a href="#">Bố trí cửa hàng</a>
-                                                      <ul>
-                                                          <li><a href="shop-fullwidth.html">Full Width</a></li>
-                                                          <li><a href="shop-fullwidth-list.html">Full Width list</a></li>
-                                                          <li><a href="shop-right-sidebar.html">Right Sidebar </a></li>
-                                                          <li><a href="shop-right-sidebar-list.html"> Right Sidebar list</a></li>
-                                                          <li><a href="shop-list.html">List View</a></li>
-                                                      </ul>
-                                                  </li>
+
                                                   <li><a href="#">Những trang khác</a>
                                                       <ul>
                                                           <li><a href="cart.html">cart</a></li>
@@ -325,12 +317,10 @@
                                               </ul>
                                           </div>
                                       </li>
-                                      <li><a href="blog.html">Thương Hiệu<i class="fa fa-angle-down"></i></a>
+                                      <li><a routerLink="thuonghieu">Thương Hiệu<i class="fa fa-angle-down"></i></a>
                                           <ul class="sub_menu pages">
-                                              <li><a href="blog-details.html">blog details</a></li>
-                                              <li><a href="blog-fullwidth.html">blog fullwidth</a></li>
-                                              <li><a href="blog-sidebar.html">blog sidebar</a></li>
-                                              <li><a href="blog-no-sidebar.html">blog no sidebar</a></li>
+                                              <li><a href="blog-details.html" *ngFor="let item of list_item">{{item.tenThuongHieu}}</a></li>
+
                                           </ul>
                                       </li>
                                       <li><a href="#">Trang <i class="fa fa-angle-down"></i></a>
@@ -345,7 +335,7 @@
                                               <li><a href="coming-soon.html">coming soon</a></li>
                                           </ul>
                                       </li>
-                                      <li><a href="contact.html"> Liên hệ chúng tôi</a></li>
+                                      <li><a routerLink="lienhe"> Liên hệ chúng tôi</a></li>
                                   </ul>
                               </nav>
                           </div>
