@@ -17,14 +17,14 @@ export class HomeComponent extends BaseComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // Observable.combineLatest(
-    //   this._api.get('/api/Brand/get-all'),
-    // ).takeUntil(this.unsubscribe).subscribe(res => {
-    //   this.list_item = res[0];
+     Observable.combineLatest(
+       this._api.get('/api/Product/get-all'),
+     ).takeUntil(this.unsubscribe).subscribe(res => {
+       this.list_item = res[0];
        setTimeout(() => {
          this.loadScripts();
       });
-    // }, err => { });
+     }, err => { });
 
   // addToCart(it) {
   //   this._cart.addToCart(it);
