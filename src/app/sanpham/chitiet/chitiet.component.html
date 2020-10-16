@@ -23,44 +23,16 @@
                   <div class="product-details-tab">
                       <div id="img-1" class="zoomWrapper single-zoom">
                           <a href="#">
-                              <img id="zoom1" src="assets/img/product/productbig5.jpg" data-zoom-image="assets/img/product/productbig5.jpg" alt="big-1">
+                              <img id="zoom1" style="height: 563px;width: 563px;" src="assets/img/product/{{chitiet.image}}"alt="big-1">
                           </a>
-                      </div>
-                      <div class="single-zoom-thumb">
-                          <ul class="s-tab-zoom owl-carousel single-product-active" id="gallery_01">
-                              <li>
-                                  <a href="#" class="elevatezoom-gallery active" data-update="" data-image="assets/img/product/productbig4.jpg" data-zoom-image="assets/img/product/productbig4.jpg">
-                                      <img src="assets/img/product/productbig4.jpg" alt="zo-th-1"/>
-                                  </a>
-
-                              </li>
-                              <li >
-                                  <a href="#" class="elevatezoom-gallery active" data-update="" data-image="assets/img/product/productbig1.jpg" data-zoom-image="assets/img/product/productbig1.jpg">
-                                      <img src="assets/img/product/productbig1.jpg" alt="zo-th-1"/>
-                                  </a>
-
-                              </li>
-                              <li >
-                                  <a href="#" class="elevatezoom-gallery active" data-update="" data-image="assets/img/product/productbig2.jpg" data-zoom-image="assets/img/product/productbig2.jpg">
-                                      <img src="assets/img/product/productbig2.jpg" alt="zo-th-1"/>
-                                  </a>
-
-                              </li>
-                              <li >
-                                  <a href="#" class="elevatezoom-gallery active" data-update="" data-image="assets/img/product/productbig3.jpg" data-zoom-image="assets/img/product/productbig3.jpg">
-                                      <img src="assets/img/product/productbig3.jpg" alt="zo-th-1"/>
-                                  </a>
-
-                              </li>
-                          </ul>
-                      </div>
+                        </div>
                   </div>
               </div>
               <div class="col-lg-7 col-md-6">
                   <div class="product_d_right">
                      <form action="#">
 
-                          <h3><a href="#">Donec Non Est</a></h3>
+                          <h3><a href="#">{{chitiet.name}}</a></h3>
                           <div class="product_nav">
                               <ul>
                                   <li class="prev"><a href="product-details.html"><i class="fa fa-angle-left"></i></a></li>
@@ -78,11 +50,11 @@
                              </ul>
                           </div>
                           <div class="price_box">
-                              <span class="old_price">$80.00</span>
-                              <span class="current_price">$70.00</span>
+                              <span class="old_price">{{chitiet.promotionPrice | currency:'VND':true:'1.0-2'}}</span>
+                              <span class="current_price">{{chitiet.price | currency:'VND':true:'1.0-2'}}</span>
                           </div>
                           <div class="product_desc">
-                              <p>eget velit. Donec ac tempus ante. Fusce ultricies massa massa. Fusce aliquam, purus eget sagittis vulputate, sapien libero hendrerit est, sed commodo augue nisi non neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor, lorem et placerat vestibulum, metus nisi posuere nisl, in </p>
+                              <p>{{chitiet.description}}</p>
                           </div>
                           <div class="product_variant color">
                               <h3>Tùy chọn có sẵn</h3>

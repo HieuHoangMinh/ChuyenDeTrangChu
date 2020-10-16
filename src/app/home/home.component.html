@@ -234,7 +234,7 @@
                                           <div class="product_content">
                                               <div class="product_content_inner">
                                                   <p class="manufacture_product"><a href="#"></a></p>
-                                                  <h4 class="product_name"><a routerLink="sanpham/chitiet">{{item.name}}</a></h4>
+                                                  <h4 class="product_name"><a [routerLink]="['/sanpham/chitiet',item.id]">{{item.name}}</a></h4>
                                                   <div class="product_rating">
                                                      <ul>
                                                          <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
