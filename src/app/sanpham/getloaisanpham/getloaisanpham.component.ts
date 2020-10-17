@@ -8,6 +8,9 @@ import { BaseComponent } from 'src/app/lib/base-component';
 })
 export class GetloaisanphamComponent extends BaseComponent implements OnInit {
   list: any;
+  list_cate: any;
+  list_product:any;
+  list_brand:any;
   page: any;
   pageSize: any;
   totalItems:any;
@@ -27,6 +30,16 @@ export class GetloaisanphamComponent extends BaseComponent implements OnInit {
         this.totalItems = res.totalItems;
         }, err => { });
    });
+
+   this._api.get('/api/ProductCategory/get-all').takeUntil(this.unsubscribe).subscribe(res => {
+    this.list_cate = res;
+  });
+  this._api.get('/api/Product/get-all').takeUntil(this.unsubscribe).subscribe(res => {
+    this.list_product = res;
+  });
+  this._api.get('/api/Brand/get-all').takeUntil(this.unsubscribe).subscribe(res => {
+    this.list_brand = res;
+  });
   }
   loadPage(page) {
     this._route.params.subscribe(params => {

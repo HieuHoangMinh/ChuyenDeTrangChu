@@ -154,7 +154,8 @@
                               </div>
                               <div class="categories_menu_toggle">
                                   <ul >
-                                      <li class="menu_item_children"*ngFor="let item of list_item"><a [routerLink]="['/sanpham/getloaisanpham',item.maThuongHieu]">{{item.name}}<i class="fa fa-angle-right"></i></a>
+                                      <li class="menu_item_children"*ngFor="let item of list_item">
+                                        <a [routerLink]="['/sanpham/getloaisanpham/', item.id]">{{item.name}}<i class="fa fa-angle-right"></i></a>
 
                                       </li>
                                 </ul>

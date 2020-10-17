@@ -14,7 +14,7 @@ export const routes: Routes = [
   {path:"",component:SanphamComponent,children:[
     {path:"chitiet",component:ChitietComponent},
     {path:"danhsach",component:DanhsachComponent},
-    {path:"getloaisanpham/:id",component:DanhsachComponent},
+    {path:"getloaisanpham/:id",component:GetloaisanphamComponent},
   ]}
 ]
 
