@@ -76,11 +76,11 @@
               </div>
                <!--shop toolbar end-->
                <div class="row shop_wrapper">
-                  <div class="col-lg-3 col-md-4 col-12 "*ngFor="let item of list_product">
+                  <div class="col-lg-3 col-md-4 col-12 "*ngFor="let item_loai of sptheoloai">
                       <article class="single_product">
                           <figure>
                               <div class="product_thumb">
-                                  <a class="primary_img" href="product-details.html"><img src="assets/img/product/{{item.image}}" alt=""></a>
+                                  <a class="primary_img" href="product-details.html"><img src="assets/img/product/{{item_loai.image}}" alt=""></a>
 
                                   <div class="label_product">
                                       <span class="label_sale">-56%</span>
@@ -91,7 +91,7 @@
                               </div>
                               <div class="product_content grid_content">
                                   <div class="product_content_inner">
-                                      <p class="manufacture_product"><a href="#">{{item.name}}</a></p>
+                                      <p class="manufacture_product"><a [routerLink]="['/sanpham/chitiet',item_loai.id]">{{item_loai.name}}</a></p>
 
                                       <div class="product_rating">
                                          <ul>
@@ -103,8 +103,8 @@
                                          </ul>
                                       </div>
                                       <div class="price_box">
-                                        <span class="old_price">{{item.promotionPrice | currency:'VND':true:'1.0-2'}}</span>
-                                        <span class="current_price">{{item.price | currency:'VND'}}</span>
+                                        <span class="old_price">{{item_loai.promotionPrice | currency:'VND':true:'1.0-2'}}</span>
+                                        <span class="current_price">{{item_loai.price | currency:'VND'}}</span>
                                       </div>
                                   </div>
                                   <div class="action_links">
@@ -124,13 +124,7 @@
 
               <div class="shop_toolbar t_bottom">
                   <div class="pagination">
-                      <ul>
-                          <li class="current">1</li>
-                          <li><a href="#">2</a></li>
-                          <li><a href="#">3</a></li>
-                          <li class="next"><a href="#">next</a></li>
-                          <li><a href="#">>></a></li>
-                      </ul>
+                    <ngb-pagination [collectionSize]="sptheoloai[0].total" [pageSize]="size" [(page)]="index" [maxSize]="10" [rotate]="true" (pageChange)="loadPage($event)"></ngb-pagination>
                   </div>
               </div>
               <!--shop toolbar end-->
