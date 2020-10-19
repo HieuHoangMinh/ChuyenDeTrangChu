@@ -10,6 +10,10 @@ import { BaseComponent } from 'src/app/lib/base-component';
 export class HeaderComponent extends BaseComponent implements OnInit {
   list_item:any;
   thuonghieu:any;
+  giohang:any;
+  tongtien:any;
+  tongmuc2:any;
+
 
   constructor(injector: Injector) {
     super(injector);
@@ -22,7 +26,16 @@ export class HeaderComponent extends BaseComponent implements OnInit {
       this._api.get('/api/ProductCategory/get-all').takeUntil(this.unsubscribe).subscribe(res => {
         this.list_item = res;
       });
+      this._cart.items.subscribe((res) => {
+        this.giohang = res;
+        this.tongtien = 0;
+        this.tongmuc2=this.giohang.length;
+        for(let x of this.giohang){
+          x.money = x.quantity * x.price;
+          this.tongtien += x.quantity * x.price;
+        }
 
+      });
   }
 
 }

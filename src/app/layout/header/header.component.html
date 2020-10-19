@@ -74,8 +74,8 @@
                                   <div class="mini_cart_wrapper">
                                       <a href="javascript:void(0)">
                                           <i class="icon-shopping-bag2"></i>
-                                          <span class="cart_price">$152.00 <i class="ion-ios-arrow-down"></i></span>
-                                          <span class="cart_count">2</span>
+                                          <span class="cart_price">{{tongtien}}<i class="ion-ios-arrow-down"></i></span>
+                                          <span class="cart_count">{{tongmuc2}}</span>
                                       </a>
                                       <!--mini cart-->
                                       <div class="mini_cart">
@@ -88,25 +88,13 @@
                                                       <a href="javascript:void(0)"><i class="icon-x"></i></a>
                                                   </div>
                                               </div>
-                                              <div class="cart_item">
+                                              <div class="cart_item" *ngFor='let spgh of giohang'>
                                                  <div class="cart_img">
-                                                     <a href="#"><img src="assets/img/s-product/product.jpg" alt=""></a>
+                                                     <a href="#"><img src="assets/img/s-product/{{spgh.image}}" alt=""></a>
                                                  </div>
                                                   <div class="cart_info">
-                                                      <a href="#">Fusce Aliquam</a>
-                                                      <p>Qty: 1 X <span> $60.00 </span></p>
-                                                  </div>
-                                                  <div class="cart_remove">
-                                                      <a href="#"><i class="ion-android-close"></i></a>
-                                                  </div>
-                                              </div>
-                                              <div class="cart_item">
-                                                 <div class="cart_img">
-                                                     <a href="#"><img src="assets/img/s-product/product2.jpg" alt=""></a>
-                                                 </div>
-                                                  <div class="cart_info">
-                                                      <a href="#">Ras Neque Metus</a>
-                                                       <p>Qty: 1 X <span> $60.00 </span></p>
+                                                      <a href="#">{{spgh.name}}</a>
+                                                       <p>Qty: {{spgh.quantity}} X <span> {{spgh.money }}</span></p>
                                                   </div>
                                                   <div class="cart_remove">
                                                       <a href="#"><i class="ion-android-close"></i></a>
@@ -118,14 +106,14 @@
                                                       <span class="price">$138.00</span>
                                                   </div>
                                                   <div class="cart_total mt-10">
-                                                      <span>total:</span>
-                                                      <span class="price">$138.00</span>
+                                                      <span>Tổng tiền:</span>
+                                                      <span class="price">{{tongtien}}</span>
                                                   </div>
                                               </div>
                                           </div>
                                           <div class="mini_cart_footer">
                                              <div class="cart_button">
-                                                  <a href="cart.html">Xem giỏ hàng</a>
+                                                  <a [routerLink]="['cart']">Xem giỏ hàng</a>
                                               </div>
                                               <div class="cart_button">
                                                   <a class="active" href="checkout.html">Thanh toán</a>
