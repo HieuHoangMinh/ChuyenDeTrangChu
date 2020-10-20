@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import {CartComponent} from './cart.component';
 import {CheckoutComponent} from '../cart/checkout/checkout.component';
 import {Routes,RouterModule} from '@angular/router';
+import { LayoutModule } from '../layout/layout.module';
 const routes:Routes=[
 {path:"",component:CartComponent},
 {path:"checkout",component:CheckoutComponent},
@@ -12,7 +13,7 @@ const routes:Routes=[
     CartComponent,CheckoutComponent
   ],
   imports: [
-    CommonModule,RouterModule.forChild(routes)
+    CommonModule,RouterModule.forChild(routes),LayoutModule
   ]
 })
 export class CartModule { }

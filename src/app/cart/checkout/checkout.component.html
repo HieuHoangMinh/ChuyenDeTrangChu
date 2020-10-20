@@ -214,67 +214,34 @@
                                   <table>
                                       <thead>
                                           <tr>
+                                            <th>Ảnh</th>
                                               <th>Sản phẩm</th>
                                               <th>Giá</th>
+                                              <th>Thành tiền</th>
                                           </tr>
                                       </thead>
                                       <tbody>
-                                          <tr>
-                                              <td> Handbag  fringilla <strong> × 2</strong></td>
-                                              <td> $165.00</td>
+                                          <tr *ngFor="let tt of thanhtoan">
+                                            <td><img src="assets/img/s-product/{{tt.image}}" style="width:60px;height:60px" alt=""></td>
+                                              <td> {{tt.name}} <strong> × {{tt.quantity}}</strong></td>
+                                              <td>{{tt.price | currency:'VND':true:'1.0-2'}}</td>
+                                              <td>{{tt.money | currency:'VND':true:'1.0-2'}}</td>
                                           </tr>
-                                          <tr>
-                                              <td>  Handbag  justo	 <strong> × 2</strong></td>
-                                              <td> $50.00</td>
-                                          </tr>
-                                          <tr>
-                                              <td>  Handbag elit	<strong> × 2</strong></td>
-                                              <td> $50.00</td>
-                                          </tr>
-                                          <tr>
-                                              <td> Handbag Rutrum	 <strong> × 1</strong></td>
-                                              <td> $50.00</td>
-                                          </tr>
+
                                       </tbody>
                                       <tfoot>
-                                          <tr>
-                                              <th>Cart Subtotal</th>
-                                              <td>$215.00</td>
-                                          </tr>
-                                          <tr>
-                                              <th>Shipping</th>
-                                              <td><strong>$5.00</strong></td>
-                                          </tr>
+
+
                                           <tr class="order_total">
-                                              <th>Tổng đơn hàng</th>
-                                              <td><strong>$220.00</strong></td>
+                                              <th colspan="3">Tổng đơn hàng ({{tongmuctt}} sản phẩm)</th>
+                                              <td><strong>{{tongtientt | currency:'VND':true:'1.0-2'}}</strong></td>
                                           </tr>
                                       </tfoot>
                                   </table>
                               </div>
                               <div class="payment_method">
-                                 <div class="panel-default">
-                                      <input id="payment" name="check_method" type="radio" data-target="createp_account" />
-                                      <label for="payment" data-toggle="collapse" data-target="#method" aria-controls="method">Tạo một tài khoản</label>
-
-                                      <div id="method" class="collapse one" data-parent="#accordion">
-                                          <div class="card-body1">
-                                             <p>Vui lòng gửi thẻ đến Tên cửa hàng, Phố cửa hàng, Thị trấn cửa hàng, Quận / Huyện cửa hàng, Mã bưu điện cửa hàng.</p>
-                                          </div>
-                                      </div>
-                                  </div>
-                                 <div class="panel-default">
-                                      <input id="payment_defult" name="check_method" type="radio" data-target="createp_account" />
-                                      <label for="payment_defult" data-toggle="collapse" data-target="#collapsedefult" aria-controls="collapsedefult">PayPal <img src="assets/img/icon/papyel.png" alt=""></label>
-
-                                      <div id="collapsedefult" class="collapse one" data-parent="#accordion">
-                                          <div class="card-body1">
-                                             <p>Thanh toán qua PayPal; bạn có thể thanh toán bằng thẻ tín dụng của mình nếu bạn không có tài khoản PayPal.</p>
-                                          </div>
-                                      </div>
-                                  </div>
                                   <div class="order_button">
-                                      <button  type="submit">Tiếp tục với PayPal</button>
+                                      <button  type="submit">Thanh Toán</button>
                                   </div>
                               </div>
                           </form>

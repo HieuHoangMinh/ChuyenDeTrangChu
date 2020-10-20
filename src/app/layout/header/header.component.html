@@ -74,7 +74,7 @@
                                   <div class="mini_cart_wrapper">
                                       <a href="javascript:void(0)">
                                           <i class="icon-shopping-bag2"></i>
-                                          <span class="cart_price">{{tongtien}}<i class="ion-ios-arrow-down"></i></span>
+                                          <span class="cart_price">{{tongtien | currency:'VND':true:'1.0-2'}}<i class="ion-ios-arrow-down"></i></span>
                                           <span class="cart_count">{{tongmuc2}}</span>
                                       </a>
                                       <!--mini cart-->
@@ -97,7 +97,7 @@
                                                        <p>Qty: {{spgh.quantity}} X <span> {{spgh.money }}</span></p>
                                                   </div>
                                                   <div class="cart_remove">
-                                                      <a href="#"><i class="ion-android-close"></i></a>
+                                                      <a (click)="deleteItem(spgh.id)"><i class="ion-android-close"></i></a>
                                                   </div>
                                               </div>
                                               <div class="mini_cart_table">

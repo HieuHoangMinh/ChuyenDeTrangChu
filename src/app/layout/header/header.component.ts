@@ -36,6 +36,10 @@ export class HeaderComponent extends BaseComponent implements OnInit {
         }
 
       });
+
+  }
+  deleteItem(item){
+    this._cart.deleteItem(item);
   }
 
 }
