@@ -12,6 +12,7 @@ import 'rxjs/add/operator/takeUntil';
 })
 export class HomeComponent extends BaseComponent implements OnInit {
   list_item:any;
+  item_1sp:any;
   constructor(injector: Injector) {
     super(injector);
   }
@@ -21,6 +22,7 @@ export class HomeComponent extends BaseComponent implements OnInit {
        this._api.get('/api/Product/get-all'),
      ).takeUntil(this.unsubscribe).subscribe(res => {
        this.list_item = res[0];
+       this.item_1sp = this.list_item[0];
        setTimeout(() => {
          this.loadScripts();
       });
