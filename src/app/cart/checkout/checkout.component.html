@@ -60,28 +60,29 @@
              </div>
           </div>
           <div class="checkout_form">
-              <div class="row">
+
+              <div class="row"> <form [formGroup]="hoadonForm" (ngSubmit)="themdonhang(hoadonForm.value)">
                   <div class="col-lg-6 col-md-6">
                       <div class="checkout_form_left">
-                          <form action="#">
+
                               <h3>Chi tiết thanh toán</h3>
                               <div class="row">
 
                                   <div class="col-lg-6 mb-20">
                                       <label>Tên <span>*</span></label>
-                                      <input type="text">
+                                      <input type="text" formControlName="ten">
                                   </div>
                                   <div class="col-lg-6 mb-20">
                                       <label>Họ <span>*</span></label>
-                                      <input type="text">
+                                      <input type="text" formControlName="ho" >
                                   </div>
 
 
                                   <div class="col-12 mb-20">
                                       <label>Địa chỉ<span>*</span></label>
-                                      <input placeholder="House number and street name" type="text">
+                                      <input placeholder="House number and street name" formControlName="dia_chi" type="text">
                                   </div>
-                                  <div class="col-12 mb-20">
+                                  <!-- <div class="col-12 mb-20">
                                       <input placeholder="Apartment, suite, unit etc. (optional)" type="text">
                                   </div>
                                   <div class="col-12 mb-20">
@@ -94,15 +95,17 @@
                                   </div>
                                   <div class="col-lg-6 mb-20">
                                       <label>Số điện thoại<span>*</span></label>
-                                      <input type="text">
+                                      <input type="text"> -->
 
-                                  </div>
+                                  <!-- </div> -->
                                    <div class="col-lg-6 mb-20">
                                       <label> Email<span>*</span></label>
-                                        <input type="text">
-
+                                        <input type="text" formControlName="email">
                                   </div>
-
+                                  <div class="col-lg-6 mb-20">
+                                    <label> Điện thoại<span>*</span></label>
+                                      <input type="text" formControlName="sdt">
+                                </div>
                                   <div class="col-12 mb-20">
                                       <input id="address" type="checkbox" data-target="createp_account" />
                                       <label class="righ_0" for="address" data-toggle="collapse" data-target="#collapsetwo" aria-controls="collapseOne">Gửi đến một địa chỉ khác?</label>
@@ -117,9 +120,6 @@
                                                   <label>Họ  <span>*</span></label>
                                                   <input type="text">
                                               </div>
-
-
-
                                               <div class="col-12 mb-20">
                                                   <label>Địa chỉ  <span>*</span></label>
                                                   <input placeholder="House number and street name" type="text">
@@ -131,12 +131,10 @@
                                               <div class="col-lg-6 mb-20">
                                                   <label>Số điện thoại<span>*</span></label>
                                                   <input type="text">
-
                                               </div>
                                                <div class="col-lg-6">
                                                   <label> Email <span>*</span></label>
                                                     <input type="text">
-
                                               </div>
                                           </div>
                                       </div>
@@ -148,12 +146,12 @@
                                       </div>
                                   </div>
                               </div>
-                          </form>
+
                       </div>
                   </div>
                   <div class="col-lg-6 col-md-6">
                       <div class="checkout_form_right">
-                          <form action="#">
+
                               <h3>Đơn đặt hàng của bạn</h3>
                               <div class="order_table table-responsive">
                                   <table>
@@ -189,11 +187,12 @@
                                       <button  type="submit">Thanh Toán</button>
                                   </div>
                               </div>
-                          </form>
+
                       </div>
-                  </div>
+                  </div></form>
               </div>
           </div>
+
       </div>
   </div>
 </div>

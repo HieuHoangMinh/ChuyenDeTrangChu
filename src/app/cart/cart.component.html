@@ -41,7 +41,7 @@
                                               <td class="product_thumb"><a href="#"><img src="assets/img/s-product/{{un.image}}" alt=""></a></td>
                                               <td class="product_name"><a href="">{{un.name}}</a></td>
                                               <td class="product-price">{{un.price | currency:'VND':true:'1.0-2'}}</td>
-                                              <td class="product_quantity"> <input min="1" max="100" [value]="un.quantity" type="number"></td>
+                                              <td class="product_quantity"> <input min="1" max="100" [value]="un.quantity" (change)="addQty(un)" type="number"></td>
                                               <td class="product_total">{{un.money | currency:'VND':true:'1.0-2'}}</td>
                                           </tr>
 

@@ -34,13 +34,7 @@ export class CartComponent extends BaseComponent implements OnInit {
   deleteItem(item){
     this._cart.deleteItem(item);
   }
-  addQty(items:any[], quantity){
-   for(let i=0;i<items.length;i++)
-   {
-    items[i].quantity =  quantity;
-    items[i].money =  Number.parseInt(items[i].quantity) *    Number.parseInt(items[i].price);
-    this._cart.addQty(items[i]);
-   }
-
+  addQty(items){
+    this._cart.addQty(items);
   }
 }
