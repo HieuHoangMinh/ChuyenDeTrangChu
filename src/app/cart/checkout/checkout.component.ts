@@ -28,6 +28,7 @@ public hoadonForm: FormGroup;
 
     this._cart.items.subscribe((res) => {
       this.thanhtoan = res;
+      console.log(this.thanhtoan);
       this.tongtientt = 0;
       this.tongmuctt=this.thanhtoan.length;
       for(let x of this.thanhtoan){
@@ -57,7 +58,7 @@ this._api.post('/api/Users/create-user',user).takeUntil(this.unsubscribe).subscr
  this.id=res.user_id;
    }, err => { });
    console.log(this.id);
-let order={customerID:null,shipName: input.ho+input.ten,shipMobile:input.sdt, shipAddress:input.dia_chi,shipEmail:input.email, listjson_chitiet:this.thanhtoan};
+let order={customerID:this.id,shipName: input.ho+input.ten,shipMobile:input.sdt, shipAddress:input.dia_chi,shipEmail:input.email,listjson_chitiet: this.thanhtoan };
 console.log(order);
 this._api.post('/api/Order/create-item',order).takeUntil(this.unsubscribe).subscribe(res => {
  alert("đã thêm đơn hàng, cảm ơn bạn đã ủng hộ!");
