@@ -227,13 +227,15 @@
               </div>
           </div>
           <div class="row">
+
               <div class="product_carousel product_details_column5 owl-carousel">
-                 <div class="col-lg-3">
+                <ng-container *ngFor="let p of productRelative">
+                 <div class="col-lg-3" >
                       <article class="single_product">
                               <figure>
                                   <div class="product_thumb">
-                                      <a class="primary_img" href="product-details.html"><img src="assets/img/product/product1.jpg" alt=""></a>
-                                      <a class="secondary_img" href="product-details.html"><img src="assets/img/product/product2.jpg" alt=""></a>
+                                      <a class="primary_img" href="product-details.html"><img src="assets/img/product/{{p.image}}" alt=""></a>
+
                                       <div class="label_product">
                                           <span class="label_sale">-56%</span>
                                       </div>
@@ -243,8 +245,8 @@
                                   </div>
                                   <div class="product_content">
                                       <div class="product_content_inner">
-                                          <p class="manufacture_product"><a href="#">Parts</a></p>
-                                          <h4 class="product_name"><a href="product-details.html">Nunc Neque Eros</a></h4>
+
+                                          <h4 class="product_name"><a [routerLink]="['/sanpham/chitiet',p.id]">{{p.name}}</a></h4>
                                           <div class="product_rating">
                                              <ul>
                                                  <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
@@ -255,231 +257,23 @@
                                              </ul>
                                           </div>
                                           <div class="price_box">
-                                              <span class="old_price">$320.00</span>
-                                              <span class="current_price">$120.00</span>
+                                              <span class="old_price">{{p.promotionPrice}}</span>
+                                              <span class="current_price">{{p.price}}</span>
                                           </div>
                                       </div>
                                       <div class="action_links">
                                            <ul>
-                                              <li class="add_to_cart"><a href="cart.html" title="Add to cart">Add to cart</a></li>
+                                              <li class="add_to_cart"><a (click)="addToCart(p)" title="Add to cart">Add to cart</a></li>
                                               <li class="wishlist"><a href="wishlist.html"  title="Add to Wishlist"><i class="icon-heart"></i></a></li>
                                               <li class="compare"><a href="compare.html" title="Add to Compare"><i class="icon-rotate-cw"></i></a></li>
                                           </ul>
                                       </div>
                                   </div>
                               </figure>
+
                           </article>
                  </div>
-                 <div class="col-lg-3">
-                      <article class="single_product">
-                          <figure>
-                              <div class="product_thumb">
-                                  <a class="primary_img" href="product-details.html"><img src="assets/img/product/product3.jpg" alt=""></a>
-                                  <a class="secondary_img" href="product-details.html"><img src="assets/img/product/product4.jpg" alt=""></a>
-                                  <div class="label_product">
-                                      <span class="label_sale">-52%</span>
-                                  </div>
-                                  <div class="quick_button">
-                                      <a href="#" data-toggle="modal" data-target="#modal_box"  title="quick view"><i class="icon-eye"></i></a>
-                                  </div>
-                              </div>
-                              <div class="product_content">
-                                  <div class="product_content_inner">
-                                      <p class="manufacture_product"><a href="#">Parts</a></p>
-                                      <h4 class="product_name"><a href="product-details.html">Lorem Ipsum Lec</a></h4>
-                                      <div class="product_rating">
-                                         <ul>
-                                             <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
-                                             <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
-                                             <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
-                                             <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
-                                             <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
-                                         </ul>
-                                      </div>
-                                      <div class="price_box">
-                                          <span class="old_price">$310.00</span>
-                                          <span class="current_price">$110.00</span>
-                                      </div>
-                                  </div>
-                                  <div class="action_links">
-                                       <ul>
-                                          <li class="add_to_cart"><a href="cart.html" title="Add to cart">Add to cart</a></li>
-                                          <li class="wishlist"><a href="wishlist.html"  title="Add to Wishlist"><i class="icon-heart"></i></a></li>
-                                          <li class="compare"><a href="compare.html" title="Add to Compare"><i class="icon-rotate-cw"></i></a></li>
-                                      </ul>
-                                  </div>
-                              </div>
-                          </figure>
-                      </article>
-                 </div>
-                 <div class="col-lg-3">
-                      <article class="single_product">
-                              <figure>
-                                  <div class="product_thumb">
-                                      <a class="primary_img" href="product-details.html"><img src="assets/img/product/product9.jpg" alt=""></a>
-                                      <a class="secondary_img" href="product-details.html"><img src="assets/img/product/product10.jpg" alt=""></a>
-                                      <div class="label_product">
-                                          <span class="label_sale">-56%</span>
-                                      </div>
-                                      <div class="quick_button">
-                                          <a href="#" data-toggle="modal" data-target="#modal_box"  title="quick view"><i class="icon-eye"></i></a>
-                                      </div>
-                                  </div>
-                                  <div class="product_content">
-                                      <div class="product_content_inner">
-                                          <p class="manufacture_product"><a href="#">Parts</a></p>
-                                          <h4 class="product_name"><a href="product-details.html">Mauris Vel Tellus</a></h4>
-                                          <div class="product_rating">
-                                             <ul>
-                                                 <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
-                                                 <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
-                                                 <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
-                                                 <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
-                                                 <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
-                                             </ul>
-                                          </div>
-                                          <div class="price_box">
-                                              <span class="old_price">$420.00</span>
-                                              <span class="current_price">$180.00</span>
-                                          </div>
-                                      </div>
-                                      <div class="action_links">
-                                           <ul>
-                                              <li class="add_to_cart"><a href="cart.html" title="Add to cart">Add to cart</a></li>
-                                              <li class="wishlist"><a href="wishlist.html"  title="Add to Wishlist"><i class="icon-heart"></i></a></li>
-                                              <li class="compare"><a href="compare.html" title="Add to Compare"><i class="icon-rotate-cw"></i></a></li>
-                                          </ul>
-                                      </div>
-                                  </div>
-                              </figure>
-                          </article>
-                 </div>
-                 <div class="col-lg-3">
-                      <article class="single_product">
-                              <figure>
-                                  <div class="product_thumb">
-                                      <a class="primary_img" href="product-details.html"><img src="assets/img/product/product1.jpg" alt=""></a>
-                                      <a class="secondary_img" href="product-details.html"><img src="assets/img/product/product2.jpg" alt=""></a>
-                                      <div class="label_product">
-                                          <span class="label_sale">-52%</span>
-                                      </div>
-                                      <div class="quick_button">
-                                          <a href="#" data-toggle="modal" data-target="#modal_box"  title="quick view"><i class="icon-eye"></i></a>
-                                      </div>
-                                  </div>
-                                  <div class="product_content">
-                                      <div class="product_content_inner">
-                                          <p class="manufacture_product"><a href="#">Parts</a></p>
-                                          <h4 class="product_name"><a href="product-details.html">Cas Meque Metus</a></h4>
-                                          <div class="product_rating">
-                                             <ul>
-                                                 <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
-                                                 <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
-                                                 <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
-                                                 <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
-                                                 <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
-                                             </ul>
-                                          </div>
-                                          <div class="price_box">
-                                              <span class="old_price">$420.00</span>
-                                              <span class="current_price">$180.00</span>
-                                          </div>
-                                      </div>
-                                      <div class="action_links">
-                                           <ul>
-                                              <li class="add_to_cart"><a href="cart.html" title="Add to cart">Add to cart</a></li>
-                                              <li class="wishlist"><a href="wishlist.html"  title="Add to Wishlist"><i class="icon-heart"></i></a></li>
-                                              <li class="compare"><a href="compare.html" title="Add to Compare"><i class="icon-rotate-cw"></i></a></li>
-                                          </ul>
-                                      </div>
-                                  </div>
-                              </figure>
-                          </article>
-                 </div>
-                 <div class="col-lg-3">
-                      <article class="single_product">
-                              <figure>
-                                  <div class="product_thumb">
-                                      <a class="primary_img" href="product-details.html"><img src="assets/img/product/product3.jpg" alt=""></a>
-                                      <a class="secondary_img" href="product-details.html"><img src="assets/img/product/product4.jpg" alt=""></a>
-                                      <div class="label_product">
-                                          <span class="label_new">new</span>
-                                      </div>
-                                      <div class="quick_button">
-                                          <a href="#" data-toggle="modal" data-target="#modal_box"  title="quick view"><i class="icon-eye"></i></a>
-                                      </div>
-                                  </div>
-                                  <div class="product_content">
-                                      <div class="product_content_inner">
-                                          <p class="manufacture_product"><a href="#">Parts</a></p>
-                                          <h4 class="product_name"><a href="product-details.html">Letraset Sheets</a></h4>
-                                          <div class="product_rating">
-                                             <ul>
-                                                 <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
-                                                 <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
-                                                 <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
-                                                 <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
-                                                 <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
-                                             </ul>
-                                          </div>
-                                          <div class="price_box">
-                                              <span class="old_price">$320.00</span>
-                                              <span class="current_price">$120.00</span>
-                                          </div>
-                                      </div>
-                                      <div class="action_links">
-                                           <ul>
-                                              <li class="add_to_cart"><a href="cart.html" title="Add to cart">Add to cart</a></li>
-                                              <li class="wishlist"><a href="wishlist.html"  title="Add to Wishlist"><i class="icon-heart"></i></a></li>
-                                              <li class="compare"><a href="compare.html" title="Add to Compare"><i class="icon-rotate-cw"></i></a></li>
-                                          </ul>
-                                      </div>
-                                  </div>
-                              </figure>
-                          </article>
-                 </div>
-                 <div class="col-lg-3">
-                      <article class="single_product">
-                              <figure>
-                                  <div class="product_thumb">
-                                      <a class="primary_img" href="product-details.html"><img src="assets/img/product/product7.jpg" alt=""></a>
-                                      <a class="secondary_img" href="product-details.html"><img src="assets/img/product/product8.jpg" alt=""></a>
-                                      <div class="label_product">
-                                          <span class="label_sale">-52%</span>
-                                      </div>
-                                      <div class="quick_button">
-                                          <a href="#" data-toggle="modal" data-target="#modal_box"  title="quick view"><i class="icon-eye"></i></a>
-                                      </div>
-                                  </div>
-                                  <div class="product_content">
-                                      <div class="product_content_inner">
-                                          <p class="manufacture_product"><a href="#">Parts</a></p>
-                                          <h4 class="product_name"><a href="product-details.html">Nunc Neque Eros</a></h4>
-                                          <div class="product_rating">
-                                             <ul>
-                                                 <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
-                                                 <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
-                                                 <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
-                                                 <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
-                                                 <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
-                                             </ul>
-                                          </div>
-                                          <div class="price_box">
-                                              <span class="old_price">$320.00</span>
-                                              <span class="current_price">$120.00</span>
-                                          </div>
-                                      </div>
-                                      <div class="action_links">
-                                           <ul>
-                                              <li class="add_to_cart"><a href="cart.html" title="Add to cart">Add to cart</a></li>
-                                              <li class="wishlist"><a href="wishlist.html"  title="Add to Wishlist"><i class="icon-heart"></i></a></li>
-                                              <li class="compare"><a href="compare.html" title="Add to Compare"><i class="icon-rotate-cw"></i></a></li>
-                                          </ul>
-                                      </div>
-                                  </div>
-                              </figure>
-                          </article>
-                 </div>
+                </ng-container>
               </div>
           </div>
       </section>

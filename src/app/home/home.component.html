@@ -431,7 +431,7 @@
                                   </div>
                                   <div class="product_content">
                                       <p class="manufacture_product"><a href="#">Parts</a></p>
-                                      <h4 class="product_name"><a href="product-details.html">{{item_1sp.name}}</a></h4>
+                                      <h4 class="product_name"><a [routerLink]="['/sanpham/chitiet',item_1sp.id]">{{item_1sp.name}}</a></h4>
                                       <div class="product_rating">
                                          <ul>
                                              <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
@@ -481,7 +481,7 @@
                                                   <div class="product_content">
                                                       <div class="product_content_inner">
                                                           <p class="manufacture_product"><a href="#">Parts</a></p>
-                                                          <h4 class="product_name"><a href="product-details.html">{{item.name}}</a></h4>
+                                                          <h4 class="product_name"><a [routerLink]="['/sanpham/chitiet',item.id]">{{item.name}}</a></h4>
                                                           <div class="product_rating">
                                                              <ul>
                                                                  <li><a href="#"><i class="ion-android-star-outline"></i></a></li>

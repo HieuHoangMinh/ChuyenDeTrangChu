@@ -33,7 +33,7 @@ public hoadonForm: FormGroup;
       this.tongmuctt=this.thanhtoan.length;
       for(let x of this.thanhtoan){
         x.money = x.quantity * x.price;
-        this.tongtientt += x.quantity * x.price;
+        this.tongtientt += Number.parseInt(x.quantity) * Number.parseInt(x.price);
       }
       setTimeout(() => {
         this.loadScripts();
@@ -57,9 +57,27 @@ this._api.post('/api/Users/create-user',user).takeUntil(this.unsubscribe).subscr
 
  this.id=res.user_id;
    }, err => { });
-   console.log(this.id);
-let order={customerID:this.id,shipName: input.ho+input.ten,shipMobile:input.sdt, shipAddress:input.dia_chi,shipEmail:input.email,listjson_chitiet: this.thanhtoan };
-console.log(order);
+
+   let tg=[];
+
+     this.thanhtoan.forEach(element => {
+
+       let kq=
+      {
+        "productID":Number.parseInt(element.id),
+        "quantity":Number.parseInt(element.quantity),
+        "price":Number.parseInt(element.price),
+         "name":element.name,
+         "image":element.image
+       };
+       tg.push(kq);
+
+
+     });
+
+let order={customerID:this.id,shipName: input.ho+input.ten,shipMobile:input.sdt, shipAddress:input.dia_chi,shipEmail:input.email,listjson_chitiet: tg
+ };
+
 this._api.post('/api/Order/create-item',order).takeUntil(this.unsubscribe).subscribe(res => {
  alert("đã thêm đơn hàng, cảm ơn bạn đã ủng hộ!");
     }, err => { });
